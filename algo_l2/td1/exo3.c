@@ -57,7 +57,7 @@ int main(){
     for (int i=1; i<=nf; i++){
         printf("%d \t", feuille[i]);
     }
-    monter(7);
+    printf("\n%d \n",monter(7));
     printf("\nle maximum des arcs est : %d \n",hauteur(7) );
     return 0;
 }

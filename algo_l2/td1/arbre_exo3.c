@@ -48,7 +48,7 @@ int hauteur(int nf){
     // initialisation de la hauteur de l'arbre h
     int h = 0;
     for(int i = 1; i<= nf; i++){
-        int a = monter(feuille[i]);
+        int a = monter(feuilles[i]);
         if(a > h){
             h = a;
         }
