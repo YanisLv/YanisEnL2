@@ -1,0 +1,9 @@
+<Digital circuit file v2.16>
+XORGate 240 120 2
+Switch 160 80 false
+Switch 160 160 false
+LED 320 120 false
+
+Wire 160 80 240 100
+Wire 160 160 240 140
+Wire 240 120 320 120
