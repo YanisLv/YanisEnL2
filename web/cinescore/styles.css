@@ -65,3 +65,25 @@ nav{
     flex-wrap:wrap;
 }
 
+ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+
+li{
+    margin:5px 10px;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+    font-weight:bold;
+    padding:10px 20px;
+    border-radius:5px;
+    transition: 0.3s ease;
+    display:inline-block;
+}
+

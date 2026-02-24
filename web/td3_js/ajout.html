@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ajouter un nouveau film sur CinéScore">
+    <meta name="author" content="Votre Nom">
+    <meta name="keywords" content="ajouter film, nouveau film, CinéScore">
+    <title>Ajouter un film - CinéScore</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CinéScore</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="ajout.html">Ajouter un film</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="formulaire-ajout">
+            <h2>Ajouter un nouveau film</h2>
+            <p>Partagez votre film préféré avec la communauté CinéScore en remplissant le formulaire ci-dessous.</p>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Informations générales</legend>
+                    
+                    <div class="form-group">
+                        <label for="titre">Titre du film :</label>
+                        <input type="text" id="titre" name="titre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="synopsis">Synopsis :</label>
+                        <textarea id="synopsis" name="synopsis" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genre">Genre principal :</label>
+                        <select id="genre" name="genre" required>
+                            <option value="">-- Choisissez un genre --</option>
+                            <option value="action">Action</option>
+                            <option value="animation">Animation</option>
+                            <option value="aventure">Aventure</option>
+                            <option value="comedie">Comédie</option>
+                            <option value="drame">Drame</option>
+                            <option value="fantastique">Fantastique</option>
+                            <option value="horreur">Horreur</option>
+                            <option value="science-fiction">Science-Fiction</option>
+                            <option value="thriller">Thriller</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Classification</legend>
+                    
+                    <div class="form-group">
+                        <p>Public recommandé :</p>
+                        
+                        <div class="radio-group">
+                            <input type="radio" id="public-tous" name="public" value="tous" checked>
+                            <label for="public-tous">Tout public</label>
+                        </div>
+
+                        <div class="radio-group">
+                            <input type="radio" id="public-12" name="public" value="12">
+                            <label for="public-12">12+</label>
+                        </div>
+
+                        <div class="radio-group">
+                            <input type="radio" id="public-16" name="public" value="16">
+                            <label for="public-16">16+</label>
+                        </div>
+
+                        <div class="radio-group">
+                            <input type="radio" id="public-18" name="public" value="18">
+                            <label for="public-18">18+</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Votre évaluation</legend>
+                    
+                    <div class="form-group">
+                        <label for="note">Note sur 10 :</label>
+                        <input type="range" id="note" name="note" min="0" max="10" value="5" step="0.5">
+                        <output for="note">5</output>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <input type="submit" value="Soumettre le film">
+                    <input type="reset" value="Réinitialiser le formulaire">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <aside>
+        <section class="aide">
+            <h3>Aide</h3>
+            <p>Assurez-vous de remplir tous les champs obligatoires avant de soumettre le formulaire.</p>
+            <p>Votre contribution sera examinée avant d'être publiée sur le site.</p>
+        </section>
+    </aside>
+
+    <footer>
+        <p>&copy; 2025 CinéScore. Tous droits réservés.</p>
+        <blockquote>
+            "Le cinéma est une écriture moderne dont l'encre est la lumière." - Jean Cocteau
+        </blockquote>
+    </footer>
+
+    <!-- AJOUT TD3 : Liaison du script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

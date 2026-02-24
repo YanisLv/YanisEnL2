@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Fiche détaillée du film Vice Versa 2">
+    <meta name="author" content="Votre Nom">
+    <meta name="keywords" content="Vice Versa 2, Pixar, animation, film">
+    <title>Vice Versa 2 - CinéScore</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CinéScore</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="ajout.html">Ajouter un film</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article class="film-detail">
+            <h2>Vice Versa 2</h2>
+            
+            <div class="film-image">
+                <img src="images/viceVersa2.jpg" alt="Affiche du film Vice Versa 2 montrant les émotions de Riley" width="300">
+            </div>
+
+            <section class="film-info">
+                <h3>Informations principales</h3>
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <th>Réalisateur</th>
+                            <td>Kelsey Mann</td>
+                        </tr>
+                        <tr>
+                            <th>Année</th>
+                            <td>2024</td>
+                        </tr>
+                        <tr>
+                            <th>Durée</th>
+                            <td>1h36</td>
+                        </tr>
+                        <tr>
+                            <th>Genre</th>
+                            <td>Animation, Comédie, Aventure</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="acteurs">
+                <h3>Acteurs principaux (voix françaises)</h3>
+                <ol>
+                    <li>Marilou Berry <sub>Joie</sub></li>
+                    <li>Charlotte Le Bon <sub>Tristesse</sub></li>
+                    <li>Pierre Niney <sub>Peur</sub></li>
+                    <li>Mélanie Laurent <sub>Dégoût</sub></li>
+                    <li>Gilles Lellouche <sub>Colère</sub></li>
+                </ol>
+            </section>
+
+            <section class="critiques">
+                <h3>Critiques des spectateurs</h3>
+
+                <!-- AJOUT TD3 - Exercice 4.2 : Bouton afficher/masquer les critiques -->
+                <button id="toggle-critiques">Masquer les critiques</button>
+                
+                <article class="avis">
+                    <h4>Marie Dubois - 9/10</h4>
+                    <p>Pixar nous offre encore une fois une pépite d'émotion et d'intelligence. Vice Versa 2 aborde avec finesse les turbulences de l'adolescence. Les nouvelles émotions sont parfaitement intégrées et apportent une vraie profondeur au récit.</p>
+                    <p><em>Publié le 20 juin 2024</em></p>
+                </article>
+
+                <article class="avis">
+                    <h4>Thomas Martin - 8/10</h4>
+                    <p>Une suite réussie qui ne tombe pas dans la facilité. L'animation est sublime et le scénario traite intelligemment de l'anxiété adolescente. Quelques longueurs au milieu, mais l'ensemble est très réussi.</p>
+                    <p><em>Publié le 25 juin 2024</em></p>
+                </article>
+
+                <article class="avis">
+                    <h4>Sophie Legrand - 10/10</h4>
+                    <p>Chef-d'œuvre absolu ! J'ai ri et pleuré. Pixar au sommet de son art, capable de parler aux enfants comme aux adultes. La représentation de l'anxiété est d'une justesse troublante. Un film nécessaire.</p>
+                    <p><em>Publié le 2 juillet 2024</em></p>
+                </article>
+
+                <!-- AJOUT TD3 - Exercice 4.1 : Système de notation interactif avec étoiles -->
+                <div id="notation-user">
+                    <h4>Donnez votre note :</h4>
+                    <span class="etoile" data-value="1">&#9734;</span>
+                    <span class="etoile" data-value="2">&#9734;</span>
+                    <span class="etoile" data-value="3">&#9734;</span>
+                    <span class="etoile" data-value="4">&#9734;</span>
+                    <span class="etoile" data-value="5">&#9734;</span>
+                    <p id="note-texte"></p>
+                </div>
+
+                <!-- AJOUT TD3 - Exercice 4.3 : Formulaire d'ajout d'avis -->
+                <div id="ajout-avis">
+                    <h4>Laisser un avis</h4>
+                    <input type="text" id="avis-nom" placeholder="Votre nom">
+                    <textarea id="avis-texte" placeholder="Votre commentaire"></textarea>
+                    <button id="btn-avis">Publier</button>
+                </div>
+            </section>
+
+            <section class="media">
+                <h3>Bande-annonce</h3>
+                <video controls width="600">
+                    <source src="videos/viceversa2_trailer.mp4" type="video/mp4">
+                    <source src="videos/viceversa2_trailer.webm" type="video/webm">
+                    Votre navigateur ne supporte pas la lecture de vidéos HTML5. Vous pouvez <a href="videos/viceversa2_trailer.mp4">télécharger la vidéo</a>.
+                </video>
+            </section>
+
+            <section class="audio">
+                <h3>Musique du film</h3>
+                <audio controls>
+                    <source src="audio/viceversa2_theme.mp3" type="audio/mpeg">
+                    <source src="audio/viceversa2_theme.ogg" type="audio/ogg">
+                    Votre navigateur ne supporte pas la lecture audio HTML5.
+                </audio>
+            </section>
+
+            
+        </article>
+    </main>
+
+    <aside>
+        <section class="films-similaires">
+            <h3>Films similaires</h3>
+            <ul>
+                <li><a href="#">Vice Versa (2015)</a></li>
+                <li><a href="#">Là-haut (2009)</a></li>
+                <li><a href="#">Soul (2020)</a></li>
+            </ul>
+        </section>
+    </aside>
+
+    <footer>
+        <p>&copy; 2025 CinéScore. Tous droits réservés.</p>
+        <blockquote>
+            "Le cinéma est une écriture moderne dont l'encre est la lumière." - Jean Cocteau
+        </blockquote>
+    </footer>
+
+    <!-- AJOUT TD3 : Liaison du script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Plateforme de notation et critique de films">
+    <meta name="author" content="Votre Nom">
+    <meta name="keywords" content="films, cinéma, critiques, notation">
+    <title>CinéScore - Découvrez et notez vos films</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CinéScore</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="ajout.html">Ajouter un film</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Bienvenue sur CinéScore</h2>
+            <p>Découvrez les meilleurs films, consultez les critiques de notre communauté et partagez vos propres avis. CinéScore est votre plateforme de référence pour explorer le monde du cinéma et trouver votre prochaine pépite à regarder.</p>
+        </section>
+
+        <section class="films-section">
+            <h2>Films du moment</h2>
+            <div class="films-grid">
+                <article class="film-card">
+                    <h3>Vice Versa 2</h3>
+                    <p><strong>Réalisateur :</strong> Kelsey Mann</p>
+                    <p><strong>Synopsis :</strong> Riley entre dans l'adolescence et de nouvelles émotions font leur apparition dans le quartier général. Joie, Tristesse, Colère, Peur et Dégoût doivent faire face à Anxiété, Envie, Ennui et Embarras.</p>
+                    <p><strong>Note :</strong> 8.5/10</p>
+                </article>
+
+                <article class="film-card">
+                    <h3>Dune : Deuxième Partie</h3>
+                    <p><strong>Réalisateur :</strong> Denis Villeneuve</p>
+                    <p><strong>Synopsis :</strong> Paul Atréides s'unit à Chani et aux Fremen pour mener la révolte contre ceux qui ont détruit sa famille. Confronté à un choix entre l'amour de sa vie et le destin de l'univers, il doit empêcher un terrible futur.</p>
+                    <p><strong>Note :</strong> 8.8/10</p>
+                </article>
+
+                <article class="film-card">
+                    <h3>Oppenheimer</h3>
+                    <p><strong>Réalisateur :</strong> Christopher Nolan</p>
+                    <p><strong>Synopsis :</strong> L'histoire du physicien J. Robert Oppenheimer et son rôle dans le développement de la bombe atomique. Un thriller biographique captivant qui explore les dilemmes moraux de la science.</p>
+                    <p><strong>Note :</strong> 9.0/10</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- AJOUT TD3 - Exercice 6 (Bonus) : Section recherche API TMDB -->
+        <section class="recherche-api">
+            <h2>Rechercher un film (TMDB)</h2>
+            <input type="text" id="recherche-api" placeholder="Titre du film...">
+            <button id="btn-recherche-api">Rechercher</button>
+            <div id="resultats-api"></div>
+            <div id="detail-api" style="display:none;"></div>
+        </section>
+    </main>
+
+    <aside>
+        <section class="top-films">
+            <h3>Top 3 des films</h3>
+            <ol>
+                <li>Oppenheimer - 9.0/10</li>
+                <li>Dune : Deuxième Partie - 8.8/10</li>
+                <li>Vice Versa 2 - 8.5/10</li>
+            </ol>
+        </section>
+
+        <section class="derniers-avis">
+            <h3>Derniers avis</h3>
+            <ul>
+                <li>"Un chef-d'œuvre visuel !" - Marie sur Dune</li>
+                <li>"Pixar au sommet de son art" - Thomas sur Vice Versa 2</li>
+                <li>"Nolan nous livre son meilleur film" - Sophie sur Oppenheimer</li>
+                <li>"Émouvant et profond" - Lucas sur Vice Versa 2</li>
+            </ul>
+        </section>
+    </aside>
+
+    <footer>
+        <p>&copy; 2025 CinéScore. Tous droits réservés.</p>
+        <blockquote>
+            "Le cinéma est une écriture moderne dont l'encre est la lumière." - Jean Cocteau
+        </blockquote>
+    </footer>
+
+    <!-- AJOUT TD3 : Liaison du script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

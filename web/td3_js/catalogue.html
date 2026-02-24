@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Catalogue complet des films sur CinéScore">
+    <meta name="author" content="Votre Nom">
+    <meta name="keywords" content="films, catalogue, cinéma, critiques">
+    <title>Catalogue - CinéScore</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CinéScore</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="ajout.html">Ajouter un film</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Catalogue des films</h2>
+
+            <!-- AJOUT TD3 - Exercice 2.2 : Champ de recherche / filtre -->
+            <input type="text" id="recherche" placeholder="Rechercher un film...">
+            
+            <!-- MODIFICATION TD3 - Exercice 5 : Suppression des rowspan sur Genre pour permettre le tri -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Réalisateur</th>
+                        <th>Année</th>
+                        <th>Genre</th>
+                        <th>Note moyenne</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="film.html">Vice Versa 2</a></td>
+                        <td>Kelsey Mann</td>
+                        <td>2024</td>
+                        <td>Animation</td>
+                        <td>8.5/10</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Le Roi Lion</a></td>
+                        <td>Roger Allers, Rob Minkoff</td>
+                        <td>1994</td>
+                        <td>Animation</td>
+                        <td>9.2/10</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Dune : Deuxième Partie</a></td>
+                        <td>Denis Villeneuve</td>
+                        <td>2024</td>
+                        <td>Science-Fiction</td>
+                        <td>8.8/10</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Interstellar</a></td>
+                        <td>Christopher Nolan</td>
+                        <td>2014</td>
+                        <td>Science-Fiction</td>
+                        <td>8.9/10</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Oppenheimer</a></td>
+                        <td>Christopher Nolan</td>
+                        <td>2023</td>
+                        <td>Drame</td>
+                        <td>9.0/10</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">La Liste de Schindler</a></td>
+                        <td>Steven Spielberg</td>
+                        <td>1993</td>
+                        <td>Drame</td>
+                        <td>9.3/10</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Mad Max: Fury Road</a></td>
+                        <td>George Miller</td>
+                        <td>2015</td>
+                        <td>Action</td>
+                        <td>8.7/10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="definitions">
+            <h2>Lexique des genres cinématographiques</h2>
+            <dl>
+                <dt>Action</dt>
+                <dd>Films caractérisés par des séquences spectaculaires, des combats, des poursuites et une forte dose d'adrénaline. L'accent est mis sur le mouvement et les cascades.</dd>
+
+                <dt>Drame</dt>
+                <dd>Œuvres centrées sur les relations humaines, les conflits émotionnels et les situations réalistes. Ces films explorent souvent des thèmes profonds et sérieux.</dd>
+
+                <dt>Comédie</dt>
+                <dd>Films destinés à divertir et faire rire le public à travers des situations humoristiques, des dialogues spirituels ou des personnages comiques.</dd>
+
+                <dt>Science-Fiction</dt>
+                <dd>Genre explorant des concepts futuristes, technologiques ou scientifiques, souvent dans des univers imaginaires ou des futurs alternatifs.</dd>
+
+                <dt>Animation</dt>
+                <dd>Films créés par des techniques d'animation, qu'elles soient traditionnelles, en images de synthèse ou en stop-motion. S'adressent à tous les publics.</dd>
+            </dl>
+        </section>
+    </main>
+
+    <aside>
+        <section class="top-films">
+            <h3>Top 3 des films</h3>
+            <ol>
+                <li>Oppenheimer - 9.0/10</li>
+                <li>Dune : Deuxième Partie - 8.8/10</li>
+                <li>Vice Versa 2 - 8.5/10</li>
+            </ol>
+        </section>
+        
+        <section class="derniers-avis">
+            <h3>Derniers avis</h3>
+            <ul>
+                <li>"Un chef-d'œuvre visuel !" - Marie sur Dune</li>
+                <li>"Pixar au sommet de son art" - Thomas sur Vice Versa 2</li>
+                <li>"Nolan nous livre son meilleur film" - Sophie sur Oppenheimer</li>
+                <li>"Émouvant et profond" - Lucas sur Vice Versa 2</li>
+            </ul>
+        </section>
+    </aside>
+
+    <footer>
+        <p>&copy; 2025 CinéScore. Tous droits réservés.</p>
+        <blockquote>
+            "Le cinéma est une écriture moderne dont l'encre est la lumière." - Jean Cocteau
+        </blockquote>
+    </footer>
+
+    <!-- AJOUT TD3 : Liaison du script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
