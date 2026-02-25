@@ -92,11 +92,13 @@ int main(){
     int n=11;
     saisie(11);
     affichage (11);
+    /*
     prefixe(1);
     printf("\n");
     postfixe(1);
     printf("\n");
     infixe(1);
     printf("\n");
+    */
     return 0 ;
 }

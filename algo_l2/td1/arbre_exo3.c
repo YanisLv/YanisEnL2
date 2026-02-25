@@ -21,7 +21,7 @@ void feuille(int n){
     for(i = 1; i<=n;i++){
         // tester si i est une feuille
         int est_feuille = 1;
-        for(j = 1; j<= n;i=j++){
+        for(j = 1; j<= n;j++){
             if(papa[j] == i){
                 est_feuille = 0;
                 break;
@@ -31,6 +31,11 @@ void feuille(int n){
             feuilles[++nf] = i;
         } // FIN DE LA BOUCLE FOR i 
     }
+    printf("les feuilles sont \n");
+    for(int k = 1; k<= nf; k++){
+        printf("%d, ",feuilles[k]);
+    }
+    printf("\n");
 }
 
 int monter(int f){
