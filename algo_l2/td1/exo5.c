@@ -2,19 +2,21 @@
 #include<stdlib.h>
 
 // structure d'un noeud
-typedef struct noeud{
-    int n;
-    struct noeud *g;
-    struct noeud *d;
+typedef struct node{
+    int info;
+    struct node *next;
+    struct node *g;
+    struct node *d
 }node;
+typedef node* Link;
 
-typedef struct noeud* lien{
+typedef struct node* Link{
     lien creerNoeud(int valeur);
     // creer un noeud et stocket valeur et initialiser g = d = NULL
-    lien nouveauNoeud = (lien)malloc(sizeof(noeud));
+    lien nouveauNoeud = (lien)malloc(sizeof(node));
 
     nouveauNoeud->info = valeur;
-    nouveauNoeud-> g = NULL;
+    nouveauNoeud->g = NULL;
     nouveauNoeud->d = NULL;
     return nouveauNoeud;
 }
