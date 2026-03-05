@@ -41,3 +41,51 @@ void pgm_free(struct pgm *p){
 
 
 
+struct pgm *pgm_write_asc(char *fname){
+    int height, width, max_value;
+    FILE *fic = fopen(fname,"r");
+    if(fic != NULL){
+        char buffer[256];
+        fgets(buffer, sizeof(buffer), fic);  // pour sauter p2 et le commentaires inutiles
+        fgets(buffer, sizeof(buffer), fic);
+        //fscanf(fic, "%*[^\n]\n"); > 2ème façon
+        //fscanf(fic, "%*[^\n]\n"); > 2ème façon
+        fscanf(fic, "%d",height);
+        fscanf(fic, "%d",width);
+        fscanf(fic, "%d",max_value);
+        struct pgm *p = pgm_alloc(width, height, max_value);
+        fclose(fic);
+        return p;
+    }
+    printf("erreur d'allocation \n");
+    return NULL;
+}
+
+
+//1.5
+
+int pgm_write_asc(char *fname, struct pgm *p){
+    FILE *fic = fopen(fname,"w");
+    if(fic != NULL){
+        fprintf(fic, "%s\n","P2");
+        fprintf(fic, "%d %d\n", p->width, p->height);
+        for(int i =0; i<p->height; i++){
+            for(int j = 0; p->width; j++){
+                fprintf(fic, "%c", p->t[i][j]);
+            }
+        }
+        fclose(fic);
+        return 1;
+    }
+    return 0;
+}
+
+// 1.6
+struct pgm *pgm_read_bin(char *fname){
+    
+}
+
+int main(){
+
+        return 0;
+}
