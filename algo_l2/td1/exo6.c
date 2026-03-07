@@ -11,24 +11,24 @@ typedef struct Node {
 //algo : n = le nombre de noeuds : creer un noeud affecter 1 er entier n au champs info de ce noeud 
 //construire un arbre à gauche de ce noeuds dont le nombre de noeuds ng = n/2 (d'une maniére recursive)
 //construire un arbre à droite de ce noeuds dont le nombre de noeuds nd = n-ng-1 (d'une maniére non recursive) 
-typedef Node* lien;
+typedef Node* Link;
 //construire un arbre de n noeuds 
-lien arbre(int n){
+Link arbre(int n){
     if (n==0){// fais néant 
         return NULL;
     }
     int ng= n/2;
     int nd= n-ng -1;
-    //lire un entier entré depuis le clavie
+    //lire un entier entré depuis le clavier
     int x;
     scanf("%d", &x);
-    lien t= (Node*)malloc(sizeof(Node));
+    Link t= (Node*)malloc(sizeof(Node));
     t->info=x;
     t->left= arbre(ng);
     t->right = arbre(nd);
     return t;
 }
-void imprimer( lien r,int niveau){
+void imprimer( Link r,int niveau){
     if (r!=NULL){
         //afficher l'indent niveau+1
         imprimer(r->right , niveau+1);
@@ -42,14 +42,14 @@ void imprimer( lien r,int niveau){
         imprimer(r->left, niveau+1);
     }
 }
-lien arbrep(int t[], int debut, int fin){
+Link arbrep(int t[], int debut, int fin){
     //creer un arbre avec les entiers du tableau t[debut ...fin]
     //divide and conquer 
     if (debut>fin){
         return NULL; //condition terminal
     }
     int milieu = (debut+fin)/2;
-    lien p = (Node*)malloc(sizeof(Node));
+    Link p = (Node*)malloc(sizeof(Node));
     p->info=t[milieu];
     p->left=arbrep(t, debut, milieu -1);
     p->right=arbrep(t, milieu +1 ,fin);
@@ -67,7 +67,7 @@ int hauteur(int t, int compteur){
 }
 int main(){
     //river function 
-    lien racine ;
+    Link racine ;
     int x;
     int n; //n=ce nbr de noeud arbre parfaitement equilibré
     /*printf("entrez un entier pour n \n");
@@ -86,7 +86,7 @@ int main(){
     for (int i=1 ; i<=n ; i++){
         printf("%d\n", t[i]);
     }
-    lien r = arbrep(t,0,n-1);
+    Link r = arbrep(t,0,n-1);
     imprimer(r,0);
     return 0;
 }

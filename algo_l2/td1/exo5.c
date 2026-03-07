@@ -10,18 +10,18 @@ typedef struct node{
 }node;
 typedef node* Link;
 
-typedef struct node* Link{
-    lien creerNoeud(int valeur);
+typedef struct node Link{
+    Link creerNoeud(int valeur);
     // creer un noeud et stocket valeur et initialiser g = d = NULL
-    lien nouveauNoeud = (lien)malloc(sizeof(node));
+    Link nouveauNoeud = (Link)malloc(sizeof(node));
 
     nouveauNoeud->info = valeur;
     nouveauNoeud->g = NULL;
     nouveauNoeud->d = NULL;
     return nouveauNoeud;
-}
+};ink;
 
-lien insertion(lien p, int x){
+Link insertion(Link p, int x){
     // insérer l'entier x dans l'arbre BST pointé par p
     // BASE de la récurrence
     if(p==NULL){
@@ -44,7 +44,7 @@ lien insertion(lien p, int x){
 // print Tree
 int main(){
     int x;
-    lien racine= NULL;
+    Link racine= NULL;
     while(scanf("%d",&x) != EOF){
         racine = insertion(racine,x);
     }
