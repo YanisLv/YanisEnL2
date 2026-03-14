@@ -15,9 +15,9 @@ struct pgm *pgm_alloc(int height, int width, int max_value){
     p->height = height;
     p->width = width;
     p->max_value = max_value;
-    p->t = malloc(height * sizeof(struct pgm *));
-    for(int i = 0; i<width; i++){
-        p->t[i] = malloc(sizeof(struct pgm));
+    p->t = malloc(height * sizeof(unsigned char *));
+    for(int i = 0; i<height; i++){
+        p->t[i] = malloc(width*sizeof(unsigned char));
     }
     return p;
 }
@@ -41,8 +41,9 @@ void pgm_free(struct pgm *p){
 
 
 
-struct pgm *pgm_write_asc(char *fname){
+struct pgm *pgm_read_asc(char *fname){
     int height, width, max_value;
+    int tmp;
     FILE *fic = fopen(fname,"r");
     if(fic != NULL){
         char buffer[256];
@@ -50,10 +51,16 @@ struct pgm *pgm_write_asc(char *fname){
         fgets(buffer, sizeof(buffer), fic);
         //fscanf(fic, "%*[^\n]\n"); > 2ème façon
         //fscanf(fic, "%*[^\n]\n"); > 2ème façon
-        fscanf(fic, "%d",height);
-        fscanf(fic, "%d",width);
-        fscanf(fic, "%d",max_value);
-        struct pgm *p = pgm_alloc(width, height, max_value);
+        fscanf(fic, "%d",&width);
+        fscanf(fic, "%d",&height);
+        fscanf(fic, "%d",&max_value);
+        struct pgm *p = pgm_alloc(height, width, max_value);
+        for(int i = 0; i<height; i++){
+            for(int j = 0; j<width; j++){
+                fscanf(fic, "%c",&tmp);
+                p->t[i][j] = (unsigned char)tmp;
+            }
+        }
         fclose(fic);
         return p;
     }
@@ -86,6 +93,17 @@ struct pgm *pgm_read_bin(char *fname){
 }
 
 int main(){
-
-        return 0;
+    int h,w,max;
+    struct pgm *p = pgm_read_asc("eye_s_asc.pgm");
+    if(p != NULL){
+        printf("height = %d, width = %d, max = %d\n",
+               p->height, p->width, p->max_value);
+    }
+    else{
+        printf("ça marche pas ntm\n");
+    }
+    for(int i = 0; i<p->height; i++){
+        for(int j = 0; j<width;)
+    }
+    return 0;
 }
