@@ -34,4 +34,7 @@ int est_tas2(int t[], int n){       // code du prof
         }
     }
     return 1;
+
+    // ECRIRE UNE FONCTION PERMETTANT DE TESTER SI UN TABLEAU D'ENTIERS EST UN TAS
+    
 }
