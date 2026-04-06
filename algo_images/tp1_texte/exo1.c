@@ -3,28 +3,17 @@
 #include<string.h>
 
 
-int naive(char *m, char *t, int lm, int lt){
-    int indice;
-    int k = 0;
-    for(int i = 0; i<lt-lm+1;i++){
-        if(m[0] == t[i]){
-            int j = i;
-            k = 0;
-            while(j<m){
-                if(t[j] == m[k]){
-                    j++;
-                    k++;
-                }
-            }
-            if(k== lm){
-                return i;
-            }
-        }
-    }
-    return -1;
-}
+/*
+    EXO SUR FEUILLE
+    
+1-
+1) Le meilleur cas : lm comparaisons : motif au debut de texte
+    Pire cas : (lt-lm+1) * lm comparaisons :lorsque le motif correspond a tout le texte jusqu'au dernier caractère
+2) meilleur cas : le
+    pire cas : (lt / lm) * lm + (lt / lm)-1; lorsque le texte correspond avec le motif sauf a la premiere lettre du motif
 
-int main(){
+2-
+1)
 
-    return 0;
-}
+    */
+
