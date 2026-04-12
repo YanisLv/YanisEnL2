@@ -115,8 +115,8 @@ int naive_aff(char *m, char *t){
 
 
 int main(){
-    char* t = "tototlo";
-    char *m = "lo";
+    char* t = "abceababccabcdabb";
+    char *m = "abcd";
     
     if(naive_aff(m,t) == -1){
         printf("le motif n'est pas present dans le texte \n");
