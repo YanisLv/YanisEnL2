@@ -133,7 +133,7 @@ void pgm_negative(struct pgm *src, struct pgm *dst){
             printf("tmp = %d \n",tmp);
             dst->t[i][j] =(max_v - tmp);
         }
-    }
+    }        
 }
 
 
