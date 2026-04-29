@@ -63,7 +63,7 @@ double B2(double x){
     else if(x>= 0.5 && x<=1.5){
         return (double)0.5*((x-1.5)*(x-1.5));
     }
-}fa
+}
 
 double B3(double x){
     int tmp = abs(x);
@@ -81,7 +81,7 @@ double B3(double x){
 double (*B[4])(double) = {B0, B1, B2, B3};
 
 unsigned char interpolation_pgm(pgm_t *image, double x, double y){
-
+    
 }
 
 int main(){
