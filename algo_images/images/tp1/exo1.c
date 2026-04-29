@@ -136,13 +136,13 @@ void pgm_negative(struct pgm *src, struct pgm *dst){
     }        
 }
 
-
+/*
 //-1.9)
 void pgm_extract(char *fname, int dx, int dy, int weight, int height){
     struct pgm *pgm_t = pgm_alloc(height,weight,)
 }
 
-
+*/
 int main(){
     
     int h,w,max;

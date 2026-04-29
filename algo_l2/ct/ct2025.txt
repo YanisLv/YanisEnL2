@@ -1,0 +1,19 @@
+
+Exercice 1)
+
+b)
+Grand C est une notaion pour désigner la compléxité dans le pire cas (borne supérieure)
+Grand Ω est une nota pour désigner la compléxité dans le meilleur cas(borne inf)
+Grand Θ est une nota pire désigner la compléxité moyenne qui est défini entre les pires cas et meilleurs cas
+f) un AVL c'est un arbre ou la hauteur des sous arbres gauche et droite ne diffèrent au plus d'1 poour chauque noeud
+un tournoi est un arbre binaire dans lequel le contenu d'un noeud est le max edntre le fils gauche et droite
+g)
+
+void prefixe(Link p){
+    if(r != NULL){
+        prefixe(p->g);
+        prefixe(p->d);
+        printf(p->info);
+    }
+}
+

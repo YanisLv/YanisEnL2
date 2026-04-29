@@ -1,30 +1,30 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-// structure d'un noeud
+#define N 20 
+
 typedef struct node{
     int info;
-    struct node *next;
     struct node *g;
-    struct node *d
+    struct node *d;
+    struct node *next;
 }node;
-typedef node* Link;
+typedef node* Link ;
 
-Link creerNoeud(int valeur){
-    // creer un noeud et stocket valeur et initialiser g = d = NULL
-    Link nouveauNoeud = (Link)malloc(sizeof(node));
 
-    nouveauNoeud->info = valeur;
-    nouveauNoeud->g = NULL;
-    nouveauNoeud->d = NULL;
-    return nouveauNoeud;
+Link createnode(int info){
+    Link tmp=(Link)malloc(sizeof(node));
+    tmp->info=info;
+    tmp->next=NULL;
+    return tmp;
 }
+Link enfants[N];
 
 Link insertion(Link p, int x){
     // insérer l'entier x dans l'arbre BST pointé par p
     // BASE de la récurrence
     if(p==NULL){
-        return creerNoeud(x);
+        return creernode(x);
     }
     if(x<p->info){  //aller vers la gauche
         //inserer x a gauche
@@ -38,15 +38,26 @@ Link insertion(Link p, int x){
     
 }
 
-
-//copier et coller
-// print Tree
-int main(){
-    int x;
-    Link racine= NULL;
-    while(scanf("%d",&x) != EOF){
-        racine = insertion(racine,x);
+void printTree(Link p){
+    Link t = p;
+    while(t!= NULL){
+        printf("%d - %d \t", t->g->info, t->d->info);
+        t = t->next;
     }
-    printTree(racine,0);
+}
+
+
+int main(){
+
+    Link racine = NULL;
+    int x;
+    int i = 1;
+    printf("s\n");
+    while(scanf("%d",&x)!= EOF){
+        printf("entrez %de nombre \n",i);
+        racine = insertion(racine,x);
+        i++;
+    }
+    //printTree(racine);
     return 0;
 }
