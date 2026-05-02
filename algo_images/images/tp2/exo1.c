@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<math.h>
 #define N 1
+#define N 1
 
 
 struct pgm{
