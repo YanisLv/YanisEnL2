@@ -198,8 +198,32 @@ pgm_t *rotation_pgm(pgm_t *image, double theta, int x0, int y0){
 }
 
 //1.5
-ppm_t *zoom(ppm_t *image, double lambda, int x0, int y0, int Dx, int Dy){
+ppm_t *zoom(ppm_t *image, double lambda, int x0, int y0, int Dx, int Dy){    
     ppm_t *res = malloc(sizeof(ppm_t));
+    res->height = Dy;
+    res->width = Dx;
+    res->max_value = 255;
+    res->pixels = malloc(Dy*sizeof(rgb_t*));
+    for(int i = 0; i<Dy; i++){
+        res->pixels[i] = malloc(Dx*sizeof(rgb_t));
+    }
+
+    for(int i = 0; i<Dy;i++){
+        for(int j = 0; j<Dx;j++){
+            double x = x0 + lambda*(i-x0);
+            double y = y0 + lambda*(j-y0);
+            if (x >= 0 && x < image->width &&
+                y >= 0 && y < image->height){
+
+                res->pixels[i][j] = interpolation_ppm(image,x,y);
+            }
+            else{
+                res->pixels[i][j].r=0, res->pixels[i][j].g=0, res->pixels[i][j].b = 0; 
+            }    
+            
+        }
+    }
+    return res;
 }
 int main(){
 

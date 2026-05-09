@@ -1,0 +1,17 @@
+Exercice 1
+
+a)
+un avl est un arbre dont la différence de hauteur des sous arbres gauche et droit ne diffèrent qu'au max 1 pour chaque noeud
+un arbre est parfaitement équilibré si toutes ses feuilles sont situés sur le dernier ou avant dernier niveau, et si tous les niveau(sauf le dernier sont remplis)
+
+b)
+un arbre est un tas lorsque pour chaque noeud i t[i] > t[2i] et t[i] > t[2i+1]
+un tournoi est un AB dont lequel le contenu d'un noeud est le max entre fg et fd
+c)
+Invariant de la boucle : propriété qui reste vraie a un point donné de la bouclé (exemple : l'entrée de la boucle) quel que soit le nb d'opérations effectués auparavant
+algo propriété : ??????
+
+d) Grand O définit la borne supérieure du nombre d'opérations : pire des cas
+    Grand Ω définit la borne inférieure du nombre d'opérations : meilleur des cas
+
+e)
