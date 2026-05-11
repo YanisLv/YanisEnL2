@@ -11,6 +11,24 @@ int main(int argc, char *argv[]) {
     }
 
     /* Bon travail */
+    //a
+    FILE *fic = fopen(argv,"r");
+    if(fic == NULL){
+        printf("erreur de lecture \n");
+        return EXIT_FAILURE;
+    }
+
+    char format[3], buffer[255];
+    int height, width, max_value;
+    
+    fscanf(fic,"%s",format);
+    while(fgetc(fic) == '#'){
+        fgets(buffer,sizeof(buffer),fic);
+    }
+    fscanf(fic, "%d %d %d",&width, &height, &max_value);
+    pgm_t *p = pgm_alloc(width,height);
+    p->max_value = max_value;
+
     
     return EXIT_SUCCESS;
 }
