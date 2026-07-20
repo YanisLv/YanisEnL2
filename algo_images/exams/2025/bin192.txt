@@ -1,0 +1,4 @@
+# Histogramme du fichier : bin192.txt
+# Valeur_Pixel Nombre_Occurrences
+0 121919
+255 9153

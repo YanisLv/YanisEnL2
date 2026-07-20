@@ -17,7 +17,7 @@ pgm_t *seuillage_image_binaire(pgm_t *img, int seuil) {
                 p->pixels[i][j] = 0;
             }
             else{
-                p->pixels[i][j] = 255;
+                p->pixels[i][j] = p->max_value;
             }
         }
     }
@@ -29,16 +29,14 @@ int histogramme(pgm_t *img, int *histogramme) {
     if(img == NULL || histogramme == NULL){
         return EXIT_FAILURE;
     } 
-    for(int i = 0; i<=img->max_value; i++){
+    for(int i = 0; i<256; i++){
         histogramme[i] = 0;
     }
 
-    for(int i = 0; i<img->height;i++){
-        for(int j = 0; i<img->width;j++){
-            unsigned char val = img->pixels[i][j];
-            if(val <=img->max_value){
-                histogramme[val] ++;
-            }  
+    for(int i = 0; i < img->height; i++) {
+        for(int j = 0; j < img->width; j++) { // Vérifie bien que c'est j et width ici !
+            int val = img->pixels[i][j];
+            histogramme[val]++;
         }
     }
     return EXIT_SUCCESS;
@@ -49,9 +47,9 @@ void afficher_histogramme(int *histogramme, int max_value, const char *nom) {
     if(histogramme == NULL){
         printf("erreur\n");
     }
-    printf("Histogramme de l'image : %s",nom);
+    printf("Histogramme de l'image : %s\n",nom);
 
-    for(int i = 0; i<=max_value;i++){
+    for(int i = 0; i<max_value;i++){
         printf("px %d :",i);
         for(int j = 0;j<histogramme[i];j++){
             printf("#");
@@ -62,18 +60,49 @@ void afficher_histogramme(int *histogramme, int max_value, const char *nom) {
 }
 
 /*Question 4*/
-void sauver_histogramme(int *histogramme, int max_value, const char *fname) {
+/*void sauver_histogramme(int *histogramme, int max_value, const char *fname){
     FILE *fic = fopen(fname,"w");
     if(fic != NULL){
         if(histogramme == NULL) printf("erreur \n");
         printf("Histogramme de l'image : %s",fname);
-        for(int i = 0; i<=max_value;i++){
+        for(int i = 0; i<max_value;i++){
         fprintf(fic,"px %d :",i);
             for(int j = 0;j<histogramme[i];j++){
                 fprintf(fic,"#");
             }
         fprintf(fic,"\n");
         }
+    }
+}*/
+void sauver_histogramme(int *histogramme, int max_value, const char *fname) {
+    FILE *fic = fopen(fname, "w");
+    
+    if (fic == NULL) {
+        fprintf(stderr, "Erreur : impossible de créer le fichier %s\n", fname);
+        return;
+    }
+
+    if (histogramme == NULL) {
+        fprintf(stderr, "Erreur : l'histogramme est vide (NULL)\n");
+        fclose(fic);
+        return;
+    }
+
+    // On écrit une entête dans le fichier
+    fprintf(fic, "# Histogramme du fichier : %s\n", fname);
+    fprintf(fic, "# Valeur_Pixel Nombre_Occurrences\n");
+
+    // On boucle sur toutes les nuances possibles (généralement 0 à 255)
+    for (int i = 0; i < max_value; i++) {
+        // On n'écrit la ligne que si le pixel est présent au moins une fois
+        // Ça évite d'avoir 250 lignes à "0" pour une image binaire
+        if (histogramme[i] > 0) {
+            fprintf(fic, "%d %d\n", i, histogramme[i]);
+        }
+    }
+
+    fclose(fic);
+    printf("Histogramme enregistre avec succes dans : %s\n", fname);
 }
 
 
@@ -88,7 +117,8 @@ void sauver_histogramme(int *histogramme, int max_value, const char *fname) {
 /**************************************************************************/
 
 /*Question 7
-double histo_normalise_et_mu_total(pgm_t *img, double *probas);{
+double hist
+pgm_t *pgm_otsu_o_normalise_et_mu_total(pgm_t *img, double *probas);{
     return 0.0;
 }
 
@@ -98,8 +128,7 @@ int seuil_otsu(const double *probas, double mu_total, int max_value) {
     return 0;
 }
 
-/*Question 9
-pgm_t *pgm_otsu_binarize(pgm_t *img) {
+/*Question 9binarize(pgm_t *img) {
     return NULL;
 }
 */

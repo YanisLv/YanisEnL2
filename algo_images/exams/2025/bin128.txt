@@ -1,0 +1,4 @@
+# Histogramme du fichier : bin128.txt
+# Valeur_Pixel Nombre_Occurrences
+0 44027
+255 87045

@@ -1,0 +1,4 @@
+# Histogramme du fichier : bin64.txt
+# Valeur_Pixel Nombre_Occurrences
+0 7208
+255 123864
